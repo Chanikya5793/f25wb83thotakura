@@ -2,3 +2,18 @@ extends layout
 
 block content
   h1= title
+  - var results = [
+    { name: "Orion", stars: 81, hemisphere: "Both" },
+    { name: "Ursa Major", stars: 62, hemisphere: "Northern" },
+    { name: "Cassiopeia", stars: 53, hemisphere: "Northern" },
+    { name: "Crux", stars: 49, hemisphere: "Southern" },
+    { name: "Andromeda", stars: 65, hemisphere: "Northern" }
+  ]
+  
+  div(class="container-fluid")
+    div(class="row")
+      each item in results
+        div(class="col-sm-2")
+          p Name: #{item.name}
+          p Stars: #{item.stars}
+          p Hemisphere: #{item.hemisphere}
