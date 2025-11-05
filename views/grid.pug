@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Query parameters: rows=#{query.rows}, cols=#{query.cols}
+  
+  -
+    let rows = Number(query.rows);
+    let cols = Number(query.cols);
+  
+  - if (isNaN(rows) || isNaN(cols)) {
+    p.text-danger Error: rows and cols must be numbers
+  - } else if (rows < 1 || rows > 10 || cols < 1 || cols > 10) {
+    p.text-danger Error: rows and cols must be between 1 and 10
+  - } else {
+    table.table.table-bordered
+      - for (let r = 0; r < rows; r++) {
+        tr
+          - for (let c = 0; c < cols; c++) {
+            td= r + c * rows
+          - }
+      - }
+  - }
