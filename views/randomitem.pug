@@ -11,8 +11,14 @@ block content
       "andromeda.jpg"
     ];
   
-  - for(let i=0; i<3; i++) {
-    - var randomIndex = Math.floor(Math.random()*5);
-    - var selectedImage = image_names[randomIndex];
-    img(src=`/images/${selectedImage}`, alt=`Constellation ${selectedImage}`, height="300", width="300")
-  - }
+  div.container
+    div.row
+      - for(let i=0; i<3; i++) {
+        - var randomIndex = Math.floor(Math.random()*5);
+        - var selectedImage = image_names[randomIndex];
+        - var displayName = selectedImage.replace('.jpg', '').replace('ursamajor', 'Ursa Major');
+        div.col-md-4.text-center.mb-4
+          img.img-thumbnail(src=`/images/${selectedImage}`, alt=`${displayName}`, height="300", width="300")
+          p.mt-2
+            strong= displayName.charAt(0).toUpperCase() + displayName.slice(1)
+      - }
