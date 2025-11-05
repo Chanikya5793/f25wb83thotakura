@@ -5,16 +5,13 @@ block content
   p Query parameters: rows=#{query.rows}, cols=#{query.cols}
   - var rows = Number(query.rows)
   - var cols = Number(query.cols)
-  - if(!Number.isInteger(rows) || !Number.isInteger(cols)) {
+  if(!Number.isInteger(rows) || !Number.isInteger(cols))
     p Rows and cols must be integers
-  - }
-  - else if(rows < 3 || rows > 13) {
+  else if(rows < 3 || rows > 13)
     p Rows must be in range 3 to 13
-  - }
-  - else if(cols < 3 || cols > 13) {
+  else if(cols < 3 || cols > 13)
     p Cols must be in range 3 to 13
-  - }
-  - else {
+  else
     table#outer
       - for(let i=0; i<rows; i++) {
         tr#middle
@@ -22,4 +19,3 @@ block content
             td= i + 2*j
           - }
       - }
-  - }
