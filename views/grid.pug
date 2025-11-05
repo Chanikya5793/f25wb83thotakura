@@ -12,7 +12,7 @@ block content
   else if(cols < 3 || cols > 13)
     p Cols must be in range 3 to 13
   else
-    table#outer
+    table#outer.table.table-bordered
       - for(let i=0; i<rows; i++) {
         tr#middle
           - for(let j=0; j<cols; j++) {
