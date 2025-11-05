@@ -22,6 +22,14 @@ The server will run on port 3000.
 ## Author
 Thotakura
 
+## Class Resource
+**Class:** Constellations
+
+**Attributes:**
+- `name` (String) - Name of the constellation
+- `stars` (Number) - Number of visible stars
+- `hemisphere` (String) - Northern, Southern, or Both
+
 ## Technologies Used
 - Node.js
 - Express.js 5.1.0
